@@ -1,0 +1,63 @@
+vi /opt/apache2/conf/httpd-dprp.conf
+/opt/osdp/apache2-control.sh stop
+ps -eaf| grep httpd
+/opt/osdp/apache2-control.sh start
+cat /opt/apache2/conf/httpd-dprp.conf
+scp /opt/apache2/conf/httpd-dprp.conf root@dpxen01:/tmp
+scp /opt/apache2/conf/proxy_html.conf root@dpxen01:/tmp
+
+
+To copy a directory (and all the files it contains), use scp with the -r option. This tells scp to recursively copy the source directory and its contents.
+scp -r /opt/apache2/conf root@192.168.98.11:/tmp/conf
+scp -r /opt/certificates root@192.168.98.11:/tmp/conf
+
+
+ssh scp Permission denied (publickey,gssapi-with-mic,gssapi-keyex)
+Modify /etc/ssh/sshd_config
+PasswordAuthentication no -> PasswordAuthentication yes
+service sshd restart
+
+
+Update Anti-Virus Signature Procedure
+In the server node svc-ip-mgnt "/osdpdata/mgntdata/comodoUpdates/"
+scp root@dpxen02:/pub/bases.cav ./
+
+
+
+Please reboot the VMs one by one with sequence dpdb01, dpdb02, dpapp01, dpapp03, dpweb01, dpweb02.
+
+
+Reverse Proxying Tomcat Web Applications Behind Apache
+http://www.who.int/manual/mod/mod_proxy.html
+https://rvdb.wordpress.com/2012/04/26/reverse-proxying-tomcat-webapps-behind-apache/
+
+
+http://n.sfs.tw/content/index/10905
+Cleanup Tomcat log files in dpapp03 / dpapp04
+cd /opt/tomcat8/logs/
+du -h --max-depth=1
+find -mtime +50
+find -mtime +50 -exec rm -rf {} \;
+ll
+df -h
+fdisk -l
+
+
+w command is used to show who is logged on and what they are doing.
+w -h
+
+
+This will print human readable sizes
+ls -lh 
+
+
+Find in vi
+Type / followed by the string you want to search for
+Type n to go to the next occurrence of the string. Type N to go to the previous occurrence. 
+
+Find and replace in the entire file using vi
+:%s/foo/bar/
+
+Undo Changes in vi
+:u
+
