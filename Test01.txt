@@ -1,11 +1,2 @@
-<<<<<<< HEAD
 abc1234
 user001
-<<<<<<< HEAD
-qqq
-111
-=======
->>>>>>> parent of dfc0a71 (Update Test01.txt)
-=======
-1234
->>>>>>> parent of 2b23c68 (Test01.txt)
